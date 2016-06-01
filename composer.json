@@ -1,0 +1,14 @@
+{
+  "name": "didwjdgks/yii2-pur-gman",
+  "type": "yii2-extension",
+  "authors": [
+  ],
+  "require": {
+    "yiisoft/yii2": ">=2.0.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "purgman\\": ""
+    }
+  }
+}
