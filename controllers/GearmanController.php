@@ -9,6 +9,7 @@ use GearmanWorker;
 
 use purgman\models\i2\BidKey;
 use purgman\models\info21c\V3BidKey;
+use purgman\models\i2\LogBidTriggerI;
 
 class GearmanController extends \yii\console\Controller
 {
@@ -82,6 +83,11 @@ class GearmanController extends \yii\console\Controller
       $bidKey->opt=$updates['opt'];
       
       $bidKey->update(true,['opt']);
+
+      $trigger_i=LogBidTriggerI::findOne($bidKey->bidid);
+      if($trigger_i!==null){
+        $trigger_i->delete();
+      }
 
       $v3BidKey=V3BidKey::findOne($bidKey->bidid);
       if($v3BidKey!==null){
