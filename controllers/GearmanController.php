@@ -30,6 +30,7 @@ class GearmanController extends \yii\console\Controller
 
   public function pur_gman($job){
     $workload=$job->workload();
+    echo $workload,PHP_EOL;
     $workload=Json::decode($workload);
 
     $this->module->i2db->close();

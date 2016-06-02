@@ -9,6 +9,8 @@ class Module extends \yii\base\Module
   public $i2db='i2db';
   public $infodb='infodb';
 
+  public $db46='db46';
+
   public $gman_server;
 
   public function init(){
@@ -16,5 +18,6 @@ class Module extends \yii\base\Module
 
     $this->i2db=Instance::ensure($this->i2db,Connection::className());
     $this->infodb=Instance::ensure($this->infodb,Connection::className());
+    $this->db46=Instance::ensure($this->db46,Connection::className());
   }
 }
