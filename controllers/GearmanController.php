@@ -38,6 +38,8 @@ class GearmanController extends \yii\console\Controller
     $bidKey=BidKey::findOne($workload['bidid']);
     if($bidKey===null) return;
 
+    if($bidKey->bidtype!='pur') return;
+
     $constnm=iconv('euckr','utf-8',$bidKey->constnm);
 
     echo " [$bidKey->notinum]";
